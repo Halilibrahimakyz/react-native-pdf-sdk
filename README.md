@@ -34,20 +34,20 @@ ink in the same document.
 
 |  | Opening | The same place, zoomed in |
 | --- | --- | --- |
-| iOS | <img src="docs/sheet-fitted-ios.png" width="240" alt="The sheet fitted to the height on iOS" /> | <img src="docs/sheet-detail-ios.png" width="240" alt="The same sheet zoomed into panel PA2 on iOS" /> |
-| Android | <img src="docs/sheet-fitted-android.png" width="240" alt="The sheet fitted to the height on Android" /> | <img src="docs/sheet-detail-android.png" width="240" alt="The same sheet zoomed into panel PA2 on Android" /> |
+| iOS | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-fitted-ios.png" width="240" alt="The sheet fitted to the height on iOS" /> | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-detail-ios.png" width="240" alt="The same sheet zoomed into panel PA2 on iOS" /> |
+| Android | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-fitted-android.png" width="240" alt="The sheet fitted to the height on Android" /> | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-detail-android.png" width="240" alt="The same sheet zoomed into panel PA2 on Android" /> |
 
 **Ten ordinary pages.** The case every viewer is built for: fitted to the
 width, scrolled, with a gap and a page number between one page and the next.
 
 | iOS | Android |
 | --- | --- |
-| <img src="docs/report-pages-ios.png" width="240" alt="Two pages of the report on iOS" /> | <img src="docs/report-pages-android.png" width="240" alt="Two pages of the report on Android" /> |
+| <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-ios.png" width="240" alt="Two pages of the report on iOS" /> | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-android.png" width="240" alt="Two pages of the report on Android" /> |
 
 Recordings, for the parts a still cannot carry:
-[the sheet pinched in and out on iOS](docs/sheet-zoom-ios.mp4) and
-[on Android](docs/sheet-zoom-android.mp4), and
-[the report scrolled](docs/report-scroll-ios.mp4).
+[the sheet pinched in and out on iOS](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/sheet-zoom-ios.mp4) and
+[on Android](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/sheet-zoom-android.mp4), and
+[the report scrolled](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/report-scroll-ios.mp4).
 The counters in the corner are React Native's own performance monitor, left on
 deliberately. Read those rather than the fluidity of the video itself: both
 screen recorders top out well under sixty frames a second, and what they cost
