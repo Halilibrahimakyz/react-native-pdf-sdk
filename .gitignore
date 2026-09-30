@@ -1,0 +1,21 @@
+node_modules/
+lib/
+*.tgz
+.DS_Store
+
+# Native build output
+android/build/
+android/.cxx/
+android/.gradle/
+android/local.properties
+ios/build/
+ios/Pods/
+xcuserdata/
+
+# Built by example/pdfs/make.swift; the PDFs themselves are kept.
+example/pdfs/make
+
+# The recordings are uploaded to GitHub rather than committed: dragging one
+# into the README editor gets a player and keeps megabytes out of the history.
+docs/*.mp4
+docs/*.mov

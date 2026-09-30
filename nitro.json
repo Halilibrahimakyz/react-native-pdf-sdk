@@ -1,0 +1,40 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": [
+    "pdfsdk"
+  ],
+  "ios": {
+    "iosModuleName": "PdfSdk"
+  },
+  "android": {
+    "androidNamespace": [
+      "pdfsdk"
+    ],
+    "androidCxxLibName": "PdfSdk"
+  },
+  "autolinking": {
+    "PdfSdk": {
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridPdfSdk"
+      },
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridPdfSdk"
+      }
+    },
+    "NativePdfView": {
+      "android": {
+        "language": "kotlin",
+        "implementationClassName": "HybridPdfView"
+      },
+      "ios": {
+        "language": "swift",
+        "implementationClassName": "HybridPdfView"
+      }
+    }
+  },
+  "ignorePaths": [
+    "**/node_modules"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "uiViewClassName": "NativePdfView",
+  "supportsRawText": false,
+  "bubblingEventTypes": {},
+  "directEventTypes": {},
+  "validAttributes": {
+    "source": true,
+    "page": true,
+    "fit": true,
+    "minZoom": true,
+    "maxZoom": true,
+    "doubleTapZoom": true,
+    "pageGap": true,
+    "backdropColor": true,
+    "scrollIndicators": true,
+    "onLoad": true,
+    "onPageChange": true,
+    "onZoom": true,
+    "onError": true,
+    "onTap": true,
+    "hybridRef": true
+  }
+}

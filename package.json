@@ -1,0 +1,82 @@
+{
+  "name": "react-native-pdf-sdk",
+  "version": "0.1.0",
+  "description": "A PDF SDK for React Native: a viewer that draws in tiles with the platform's own renderer, built for drawings metres wide.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "src/index.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "license": "MIT",
+  "author": "Halil \u0130brahim Aky\u00fcz",
+  "homepage": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halilibrahimakyz/react-native-pdf-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Halilibrahimakyz/react-native-pdf-sdk/issues"
+  },
+  "keywords": [
+    "react-native",
+    "pdf",
+    "viewer",
+    "tiled",
+    "zoom",
+    "cad",
+    "drawings",
+    "nitro",
+    "ios",
+    "android"
+  ],
+  "files": [
+    "src",
+    "lib",
+    "nitrogen",
+    "nitro.json",
+    "android/src/main",
+    "android/build.gradle",
+    "android/gradle.properties",
+    "android/CMakeLists.txt",
+    "ios/*.swift",
+    "PdfSdk.podspec",
+    "react-native.config.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "specs": "npm run typecheck && nitrogen",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "pdfs": "cd example/pdfs && swift make.swift .",
+    "test:ios": "sh ios/tests/run.sh",
+    "test:android": "cd ../../android && ./gradlew :react-native-pdf-sdk:testDebugUnitTest",
+    "verify": "npm run typecheck && npm run test:ios && npm run test:android",
+    "build": "bob build",
+    "prepublishOnly": "npm run verify && npm run build"
+  },
+  "devDependencies": {
+    "nitrogen": "0.35.5",
+    "react-native-builder-bob": "^0.40.0",
+    "typescript": "^5.6.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-nitro-modules": "*"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
+}
