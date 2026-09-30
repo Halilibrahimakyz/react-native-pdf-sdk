@@ -26,6 +26,8 @@ Both documents below are drawn by `example/pdfs/make.swift` and ship with this
 repository. Nothing pictured belongs to anyone: every line of it came out of
 that script.
 
+<img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/sheet-zoom-ios.gif" width="280" alt="A sheet zoomed into until the notes set at four points are readable" />
+
 **One sheet, 26000 × 1500 points.** A drawing that wide is a line when it is
 fitted to a phone's width, so it opens fitted to the height and is read by
 panning. The second column is the same screen after pinching into the middle of
@@ -45,6 +47,9 @@ width, scrolled, with a gap and a page number between one page and the next.
 | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-ios.png" width="240" alt="Two pages of the report on iOS" /> | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-android.png" width="240" alt="Two pages of the report on Android" /> |
 
 ### Recordings
+
+Whole, and at the speed they happened. They play on the GitHub page; where
+this file is rendered by something else they are links.
 
 The sheet, pinched in and out on iOS:
 
