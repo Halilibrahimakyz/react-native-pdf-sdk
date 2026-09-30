@@ -48,25 +48,20 @@ width, scrolled, with a gap and a page number between one page and the next.
 
 The sheet, pinched in and out on iOS:
 
-
 https://github.com/user-attachments/assets/0eead98f-01e7-4dd4-8d49-aed94b51f8f2
-
-
 
 The same on Android:
 
-
 https://github.com/user-attachments/assets/d4c5a9db-51ec-417b-a550-8c844b5d489b
-
-
 
 The report, scrolled:
 
-
 https://github.com/user-attachments/assets/a93a3de5-4e77-46d2-8a2e-8ab7bc371ace
 
-
-
+The counters in the corner are React Native's own performance monitor, left on
+deliberately. Read those rather than the fluidity of the video itself: both
+screen recorders top out well under sixty frames a second, and what they cost
+is charged to the same threads they are measuring.
 
 ## Requirements
 
