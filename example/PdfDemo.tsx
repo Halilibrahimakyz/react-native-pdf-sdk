@@ -1,13 +1,6 @@
 import { useState } from 'react';
-import {
-  Platform,
-  Pressable,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { PdfView, type PdfViewSource } from '../src';
 
@@ -19,25 +12,29 @@ import { PdfView, type PdfViewSource } from '../src';
  * in the README were taken from, so what is pictured there is what this file
  * produces.
  *
- * It keeps out of the status bar and the home indicator without asking for a
- * dependency to do it: iOS has that in `SafeAreaView`, and Android tells you
- * how tall its status bar is.
+ * It keeps out of the status bar and the home indicator by asking
+ * `react-native-safe-area-context` for the insets, which is the one thing here
+ * the package itself does not provide. The package has no opinion about where
+ * the viewer sits; that is the screen's business, and this is one answer.
  */
 export interface PdfDemoProps {
   source: string | PdfViewSource;
   onClose?: () => void;
 }
 
-/** What Android puts above the app, and iOS leaves to `SafeAreaView`. */
-const statusBar = Platform.OS === 'android' ? StatusBar.currentHeight ?? 0 : 0;
-
 export function PdfDemo({ source, onClose }: PdfDemoProps) {
+  const insets = useSafeAreaInsets();
   const [pages, setPages] = useState({ page: 0, total: 0 });
   const [failure, setFailure] = useState<string | null>(null);
 
   return (
-    <SafeAreaView style={styles.root}>
-      <View style={[styles.body, { paddingTop: statusBar }]}>
+    <View
+      style={[
+        styles.root,
+        { paddingTop: insets.top, paddingBottom: insets.bottom },
+      ]}
+    >
+      <View style={styles.body}>
         <PdfView
           source={source}
           backdropColor="#D4D4D7"
@@ -72,7 +69,7 @@ export function PdfDemo({ source, onClose }: PdfDemoProps) {
           </View>
         )}
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
