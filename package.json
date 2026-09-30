@@ -1,6 +1,6 @@
 {
   "name": "react-native-pdf-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A PDF SDK for React Native: a viewer that draws in tiles with the platform's own renderer, built for drawings metres wide.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

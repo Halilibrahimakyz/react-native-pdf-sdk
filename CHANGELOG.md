@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1
+
+The readme only. Nothing in the package's code changed.
+
+- Screenshots of both documents on both platforms, three recordings, and a
+  loop of the sheet being zoomed into at the top of the page. The loop is an
+  image rather than a video so that it plays on npm as well as on GitHub.
+
 ## 0.1.0
 
 First release.

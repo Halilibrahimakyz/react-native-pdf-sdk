@@ -30,6 +30,13 @@ decision logic, not the drawing: page layout, the fit policy, zoom limits, the
 tile ladder and which tiles a viewport asks for. They run without a device, so
 there is no excuse for skipping them.
 
+`npm run test:android` is broken at the moment, and with it `verify`. The
+Kotlin tests need a Gradle project to run in, and until this package was
+published that project was the app it was developed inside. The fix is an
+example app in this repository, which the tests and the screenshots can both
+run through; until it exists the Android suite has to be run from an app that
+has the package linked, and iOS carries `verify` on its own.
+
 If you touched anything under `src/specs`, run `npm run specs` as well and
 commit the regenerated `nitrogen/` output alongside it. Generated files belong
 in the same commit as the spec that produced them.
