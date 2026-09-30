@@ -93,56 +93,20 @@ func drawSheet(_ context: CGContext, _ size: CGSize) {
   box(frame, width: 2, in: context)
   box(frame.insetBy(dx: 6, dy: 6), width: 0.6, grey: 0.4, in: context)
 
-  // The title block, which is what a reader looks for first.
-  let title = CGRect(x: frame.minX + 14, y: frame.minY + 14, width: 900, height: 300)
-  context.setFillColor(CGColor(gray: 1, alpha: 1))
-  context.fill(title)
-  box(title, width: 1.2, in: context)
-  write("PDF SDK", at: CGPoint(x: title.minX + 20, y: title.maxY - 70), size: 54, bold: true, in: context)
-  write(
-    "DEMONSTRATION SHEET",
-    at: CGPoint(x: title.minX + 20, y: title.maxY - 100),
-    size: 18,
-    grey: 0.35,
-    in: context
-  )
-  let fields = [
-    ("PROJECT", "Tiled rendering, one sheet"),
-    ("DRAWING", "Formwork plan, level +5.26"),
-    ("SCALE", "1:50 at A0"),
-    ("SHEET", "1 of 1"),
-    ("REVISION", "C"),
-  ]
-  var row = title.maxY - 140
-  for (name, value) in fields {
-    write(name, at: CGPoint(x: title.minX + 20, y: row), size: 11, bold: true, grey: 0.35, in: context)
-    write(value, at: CGPoint(x: title.minX + 160, y: row), size: 11, in: context)
-    line(
-      from: CGPoint(x: title.minX + 14, y: row - 8),
-      to: CGPoint(x: title.maxX - 14, y: row - 8),
-      width: 0.3,
-      grey: 0.75,
-      in: context
-    )
-    row -= 30
-  }
-  write(
-    "Every line on this sheet was drawn by example/pdfs/make.swift. No part of it is anyone's work but this package's.",
-    at: CGPoint(x: title.minX + 20, y: title.minY + 20),
-    size: 10,
-    grey: 0.45,
-    in: context
-  )
+  // The title block goes in the corner a drawing is signed in, and is drawn
+  // last so that it sits over the plan. The plan itself starts at the left
+  // edge, so that the sheet opens on drawing rather than on empty paper.
+  let title = CGRect(x: frame.maxX - 914, y: frame.minY + 14, width: 900, height: 300)
 
   // The plan itself: a grid of bays, a column at every intersection, beams
   // between them and a slab panel in each cell. Everything is written twice,
   // once at a size that can be read at a glance and once at a size that cannot.
-  let bay: CGFloat = 820
   let storey: CGFloat = 330
-  let left = title.maxX + 220
+  let left = frame.minX + 180
   let bottom = frame.minY + 180
   let rows = Int((frame.maxY - 220 - bottom) / storey)
-  let bays = Int((frame.maxX - 260 - left) / bay)
+  let bays = columns.count - 1
+  let bay = (title.minX - 260 - left) / CGFloat(bays)
 
   // The grid lines, with a bubble at the end of each.
   for column in 0...bays where column < columns.count {
@@ -239,6 +203,45 @@ func drawSheet(_ context: CGContext, _ size: CGSize) {
       )
     }
   }
+
+  context.setFillColor(CGColor(gray: 1, alpha: 1))
+  context.fill(title)
+  box(title, width: 1.2, in: context)
+  write("PDF SDK", at: CGPoint(x: title.minX + 20, y: title.maxY - 70), size: 54, bold: true, in: context)
+  write(
+    "DEMONSTRATION SHEET",
+    at: CGPoint(x: title.minX + 20, y: title.maxY - 100),
+    size: 18,
+    grey: 0.35,
+    in: context
+  )
+  let fields = [
+    ("PROJECT", "Tiled rendering, one sheet"),
+    ("DRAWING", "Formwork plan, level +5.26"),
+    ("SCALE", "1:50 at A0"),
+    ("SHEET", "1 of 1"),
+    ("REVISION", "C"),
+  ]
+  var row = title.maxY - 140
+  for (name, value) in fields {
+    write(name, at: CGPoint(x: title.minX + 20, y: row), size: 11, bold: true, grey: 0.35, in: context)
+    write(value, at: CGPoint(x: title.minX + 160, y: row), size: 11, in: context)
+    line(
+      from: CGPoint(x: title.minX + 14, y: row - 8),
+      to: CGPoint(x: title.maxX - 14, y: row - 8),
+      width: 0.3,
+      grey: 0.75,
+      in: context
+    )
+    row -= 30
+  }
+  write(
+    "Every line on this sheet was drawn by example/pdfs/make.swift. No part of it is anyone's work but this package's.",
+    at: CGPoint(x: title.minX + 20, y: title.minY + 20),
+    size: 10,
+    grey: 0.45,
+    in: context
+  )
 
   // A note at the far end, so that crossing the sheet has a reward.
   write(
