@@ -15,7 +15,6 @@ xcuserdata/
 # Built by example/pdfs/make.swift; the PDFs themselves are kept.
 example/pdfs/make
 
-# The recordings are uploaded to GitHub rather than committed: dragging one
-# into the README editor gets a player and keeps megabytes out of the history.
-docs/*.mp4
+# The trimmed recordings the README links to are committed; each is under a
+# megabyte. The raw screen captures they were cut from are not.
 docs/*.mov

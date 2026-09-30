@@ -20,6 +20,39 @@ import { PdfView } from 'react-native-pdf-sdk';
 />;
 ```
 
+## What it looks like
+
+Both documents below are drawn by `example/pdfs/make.swift` and ship with this
+repository. Nothing pictured belongs to anyone: every line of it came out of
+that script.
+
+**One sheet, 26000 × 1500 points.** A drawing that wide is a line when it is
+fitted to a phone's width, so it opens fitted to the height and is read by
+panning. The second column is the same screen after pinching into the middle of
+it: the casting note set at 4 points, a smudge in the first column, is the same
+ink in the same document.
+
+|  | Opening | The same place, zoomed in |
+| --- | --- | --- |
+| iOS | <img src="docs/sheet-fitted-ios.png" width="240" alt="The sheet fitted to the height on iOS" /> | <img src="docs/sheet-detail-ios.png" width="240" alt="The same sheet zoomed into panel PA2 on iOS" /> |
+| Android | <img src="docs/sheet-fitted-android.png" width="240" alt="The sheet fitted to the height on Android" /> | <img src="docs/sheet-detail-android.png" width="240" alt="The same sheet zoomed into panel PA2 on Android" /> |
+
+**Ten ordinary pages.** The case every viewer is built for: fitted to the
+width, scrolled, with a gap and a page number between one page and the next.
+
+| iOS | Android |
+| --- | --- |
+| <img src="docs/report-pages-ios.png" width="240" alt="Two pages of the report on iOS" /> | <img src="docs/report-pages-android.png" width="240" alt="Two pages of the report on Android" /> |
+
+Recordings, for the parts a still cannot carry:
+[the sheet pinched in and out on iOS](docs/sheet-zoom-ios.mp4) and
+[on Android](docs/sheet-zoom-android.mp4), and
+[the report scrolled](docs/report-scroll-ios.mp4).
+The counters in the corner are React Native's own performance monitor, left on
+deliberately. Read those rather than the fluidity of the video itself: both
+screen recorders top out well under sixty frames a second, and what they cost
+is charged to the same threads they are measuring.
+
 ## Requirements
 
 - React Native 0.78 or newer with the **New Architecture** enabled. There is no
