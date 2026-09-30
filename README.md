@@ -44,14 +44,29 @@ width, scrolled, with a gap and a page number between one page and the next.
 | --- | --- |
 | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-ios.png" width="240" alt="Two pages of the report on iOS" /> | <img src="https://raw.githubusercontent.com/Halilibrahimakyz/react-native-pdf-sdk/main/docs/report-pages-android.png" width="240" alt="Two pages of the report on Android" /> |
 
-Recordings, for the parts a still cannot carry:
-[the sheet pinched in and out on iOS](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/sheet-zoom-ios.mp4) and
-[on Android](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/sheet-zoom-android.mp4), and
-[the report scrolled](https://github.com/Halilibrahimakyz/react-native-pdf-sdk/blob/main/docs/report-scroll-ios.mp4).
-The counters in the corner are React Native's own performance monitor, left on
-deliberately. Read those rather than the fluidity of the video itself: both
-screen recorders top out well under sixty frames a second, and what they cost
-is charged to the same threads they are measuring.
+### Recordings
+
+The sheet, pinched in and out on iOS:
+
+
+https://github.com/user-attachments/assets/0eead98f-01e7-4dd4-8d49-aed94b51f8f2
+
+
+
+The same on Android:
+
+
+https://github.com/user-attachments/assets/d4c5a9db-51ec-417b-a550-8c844b5d489b
+
+
+
+The report, scrolled:
+
+
+https://github.com/user-attachments/assets/a93a3de5-4e77-46d2-8a2e-8ab7bc371ace
+
+
+
 
 ## Requirements
 
