@@ -216,21 +216,27 @@ there to make that number matter less, and each was measured before and after:
 
 ## Trying it
 
-`example/pdfs` holds two documents drawn by `example/pdfs/make.swift`, so that a
-screenshot of this package is this package's own work and carries nobody's
-data. `sheet.pdf` is one drawing nine metres wide with dimensions written small
-enough to need the zoom; `report.pdf` is ten ordinary A4 pages. Run `npm run
-pdfs` to draw them again.
-
-The quickest way to open them on a device is to serve the folder and hand the
-url to the view, which also exercises the fetching it does itself:
+There is an app in `example/`. It opens the two documents this repository draws
+for itself, and it has two screens: the viewer as you would ship it, and a lab
+with every property, every event and both methods on screen at once.
 
 ```sh
-cd example/pdfs && python3 -m http.server 8000
+cd example
+npm install
+npm run pods      # iOS only
+npm run ios       # or: npm run android
 ```
 
-An iOS simulator reaches that at `http://localhost:8000/sheet.pdf` and an
-Android emulator at `http://10.0.2.2:8000/sheet.pdf`.
+The library is linked from source, so an edit under `src/` or in either
+platform's folder shows up on the next reload, and a native change on the next
+build.
+
+The two documents are drawn by `example/pdfs/make.swift`, which means a
+screenshot of this package is this package's own work and carries nobody's
+data. `sheet.pdf` is one drawing nine metres wide with notes set at four
+points; `report.pdf` is ten ordinary A4 pages. `npm run pdfs` draws them again.
+The example fetches them over https and keeps what it fetched, so only the
+first launch needs the network.
 
 ## Tests
 
