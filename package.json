@@ -50,14 +50,19 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "pdfs": "cd example/pdfs && swift make.swift .",
     "test:ios": "sh ios/tests/run.sh",
-    "test:android": "cd ../../android && ./gradlew :react-native-pdf-sdk:testDebugUnitTest",
+    "test:android": "cd example/android && ./gradlew :react-native-pdf-sdk:testDebugUnitTest",
     "verify": "npm run typecheck && npm run test:ios && npm run test:android",
     "build": "bob build",
-    "prepublishOnly": "npm run verify && npm run build"
+    "prepublishOnly": "npm run verify && npm run build",
+    "example": "npm --prefix example run start"
   },
   "devDependencies": {
+    "@types/react": "^19.2.0",
     "nitrogen": "0.35.5",
+    "react": "19.2.3",
+    "react-native": "0.85.2",
     "react-native-builder-bob": "^0.40.0",
+    "react-native-nitro-modules": "^0.35.6",
     "typescript": "^5.6.0"
   },
   "peerDependencies": {

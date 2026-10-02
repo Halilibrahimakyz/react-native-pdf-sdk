@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { PdfView, type PdfViewSource } from '../src';
+import { PdfView, type PdfViewSource } from 'react-native-pdf-sdk';
 
 /**
  * The whole viewer, and nothing else.

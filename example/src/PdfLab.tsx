@@ -15,7 +15,7 @@ import {
   type PdfFit,
   type PdfViewHandle,
   type PdfViewSource,
-} from '../src';
+} from 'react-native-pdf-sdk';
 
 /**
  * Every prop, event and method of the viewer, on one screen.
@@ -29,7 +29,7 @@ import {
  * package should not know what an app's theme looks like.
  */
 export interface PdfLabProps {
-  /** A document already on disk, which is what the host app has to hand. */
+  /** The document to start on: a path on disk, or a url the view fetches. */
   path: string;
   /** The same document as a url, to watch the view fetch it itself. */
   remote?: { uri: string; headers?: Record<string, string> };
