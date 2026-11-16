@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0
+
+The bridge is regenerated with Nitro 0.37.2. Nothing hand-written changed.
+
+- Fixed: on React Native 0.88, Debug builds crashed the moment `PdfView`
+  mounted, on an assertion that the view's props were never set. Release
+  builds were not affected.
+- Breaking: the app now needs `react-native-nitro-modules` 0.37.2 or newer.
+  The generated code includes headers that earlier versions do not have, and
+  the peer range says so.
+
 ## 0.1.1
 
 The readme only. Nothing in the package's code changed.

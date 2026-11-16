@@ -68,7 +68,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-nitro-modules": "*"
+    "react-native-nitro-modules": ">=0.37.2"
   },
   "react-native-builder-bob": {
     "source": "src",

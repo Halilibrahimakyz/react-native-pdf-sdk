@@ -72,8 +72,8 @@ is charged to the same threads they are measuring.
 
 - React Native 0.78 or newer with the **New Architecture** enabled. There is no
   old architecture fallback.
-- [`react-native-nitro-modules`](https://nitro.margelo.com), which carries the
-  bridge this is built on.
+- [`react-native-nitro-modules`](https://nitro.margelo.com) 0.37.2 or newer,
+  which carries the bridge this is built on.
 - iOS 15, Android 7 (API 24).
 
 ```sh
